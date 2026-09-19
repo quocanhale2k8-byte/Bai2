@@ -1,0 +1,366 @@
+/* =========================================================
+   JACKSON ELECTRONICS
+   Table-based page layout.
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff;
+    color: #111111;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 14px;
+}
+
+/* Khung xanh chính - màu nền lấy trực tiếp từ ảnh mẫu. */
+.page {
+    width: 580px;
+    min-height: 617px;
+    margin: 4px auto;
+    padding: 1px 0 3px;
+    background: rgb(152, 205, 255);
+    border: 1px solid #dddddd;
+}
+
+/* ---------------- LOGO ---------------- */
+
+.logo {
+    width: 266px;
+    height: 68px;
+    margin: 0 auto;
+    table-layout: fixed;
+
+    background: linear-gradient(
+        to bottom,
+        #08fafb 0%,
+        #00ffff 45%,
+        #1dfff8 73%,
+        #19f3e9 100%
+    );
+
+    border: 1px solid #222222;
+    border-radius: 11px;
+    box-shadow: 5px 7px 2px rgba(70, 90, 100, 0.42);
+    overflow: hidden;
+}
+
+.logo td {
+    position: relative;
+    height: 33px;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 27px;
+    line-height: 31px;
+    font-weight: bold;
+}
+
+/* Biểu tượng chim nguyên bản ở góc trái của logo. Ảnh nhỏ được nhúng trực
+   tiếp để hai tệp HTML/CSS vẫn hoạt động độc lập, không cần thêm tài nguyên. */
+.logo tr:first-child td::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 13px;
+    width: 48px;
+    height: 29px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAdCAYAAADsMO9vAAACBElEQVR42t3YzYtNcRgH8M+9Ul6G8bqYZEqzEJfIkIWJEfKWvC38BcoGq1laSlY2FspWKSslCy9RrCZKQhZXmbmFhTJXxBCNzTN1m+6598zMHffHU7/O+f06zznP9/d9Xn7P4T+VkyhjrM44mLrxlzIMHx83UjX8EG41MX587E7N+FWo5DR+DK9SMXxWXKt4jRK6cugtxxCep+hKd3OycDuYa6sU66ztx3l8bKI7gq8pZ6Nu3G/AQPe/UhMGMgA8TcG44jR0eyOQV6S8+0dyBPOZlAHszQHgPXpSBnECH5qAKGNOyiCO52DiSQp1oZFswc0GAEZwNPWUOh9XMgBczfmOuSkAeVYHQF8OvZ3ob3cd2IeNddaP5dDtDFdrq1zMcKFqk+PFpmCg7ZX4ekY/0IkLDfRK+JxKMC/GtQwmBjJ0TsXxo1Z2tTv19tUBMFTnuQ04XTOfF2vrJjy3EFuxerId2VSlEkHZGykWFmE2Hkz4y/EOL2t6jiV4FPNl2IyVcTQp/y0AMIg76Ihdhe14jLcx3xGdXhWH8SuAV7An2tifYXhlMh8vtNilzuIcluJF+Pj6uP+NbRHMn6LjK2I4mBmdTlPfKhnEF6wNRn7E7vZH/SjFoe873gRLw8HIlKQwQ8F9IIKxAwuwBt/wEPciDY+24kOFGc5SPeFWXeFGl8N9WiZ/AEKIxDFANVYfAAAAAElFTkSuQmCC") center / 48px 29px no-repeat;
+    pointer-events: none;
+}
+
+.logo tr:first-child td {
+    border-bottom: 3px solid #111111;
+}
+
+/* ---------------- TITLE ---------------- */
+
+h1 {
+    margin: 30px 0 15px;
+    padding: 0;
+    text-align: center;
+    font-size: 25px;
+    line-height: 28px;
+    font-weight: bold;
+}
+
+.intro {
+    margin: 0 0 3px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+/* ---------------- MAIN FORM TABLE ---------------- */
+
+.form-table {
+    width: 480px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+.form-table > tbody > tr > td {
+    height: 22px;
+    padding: 1px 0;
+    vertical-align: middle;
+}
+
+.label-col {
+    width: 167px;
+    padding-left: 0 !important;
+    font-weight: normal;
+}
+
+.top-label {
+    vertical-align: top !important;
+    padding-top: 3px !important;
+}
+
+.inline-table,
+.choice-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.inline-table td,
+.choice-table td {
+    padding: 0;
+    vertical-align: middle;
+}
+
+.small-label {
+    white-space: nowrap;
+    padding-left: 4px !important;
+}
+
+/* ---------------- INPUTS ---------------- */
+
+input[type="text"],
+select,
+textarea {
+    margin: 0;
+    padding: 1px 3px;
+    background: #ffffff;
+    color: #111111;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+
+    border-top: 2px solid #a5a5a5;
+    border-left: 2px solid #a5a5a5;
+    border-right: 2px solid #eeeeee;
+    border-bottom: 2px solid #eeeeee;
+
+    border-radius: 0;
+    outline: none;
+}
+
+input[type="text"] {
+    height: 21px;
+}
+
+/* Name */
+.first-name {
+    width: 103px;
+}
+
+.last-name {
+    width: 103px;
+}
+
+/* Address */
+.address-input {
+    width: 185px;
+}
+
+/* City / State / Zip */
+.city-input {
+    width: 130px;
+}
+
+.state-label {
+    padding-left: 2px !important;
+}
+
+.state-input {
+    width: 38px;
+}
+
+.zip-label {
+    padding-left: 5px !important;
+}
+
+.zip-input {
+    width: 62px;
+}
+
+/* Country */
+.country-input {
+    width: 130px;
+}
+
+/* Product / date / serial */
+.product-select {
+    width: 108px;
+    height: 21px;
+    padding: 0 2px;
+}
+
+.medium-input {
+    width: 130px;
+}
+
+/* ---------------- SEPARATORS ---------------- */
+
+hr {
+    height: 1px;
+    margin: 8px 0 8px;
+    padding: 0;
+    border: 0;
+    border-top: 1px solid #5d879f;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.bottom-line {
+    margin-top: 8px;
+    margin-bottom: 9px;
+}
+
+/* ---------------- RADIO / CHECKBOX ---------------- */
+
+/*
+   Ảnh mẫu dùng control kiểu cũ với nền xanh rất nhạt.
+   accent-color giữ được trạng thái chọn và cho màu gần giao diện mẫu.
+*/
+input[type="radio"],
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    margin: 0 3px 0 0;
+    padding: 0;
+    vertical-align: -2px;
+    background: #f6fbf7;
+    border: 1px solid #688f9a;
+    box-shadow:
+        inset 1px 1px 0 #ffffff,
+        1px 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+input[type="radio"] {
+    border-radius: 50%;
+}
+
+input[type="radio"]:checked {
+    background: radial-gradient(
+        circle at center,
+        #4b7353 0 2px,
+        #c8f2e3 2.5px 100%
+    );
+}
+
+input[type="checkbox"]:checked {
+    background:
+        linear-gradient(45deg, transparent 42%, #4d7f52 42% 55%, transparent 55%) 1px 4px / 5px 5px no-repeat,
+        linear-gradient(-45deg, transparent 42%, #4d7f52 42% 55%, transparent 55%) 4px 1px / 8px 8px no-repeat,
+        #effff3;
+}
+
+.choice-table {
+    width: 305px;
+    table-layout: fixed;
+}
+
+.choice-table td:first-child {
+    width: 122px;
+}
+
+.choice-table td:last-child {
+    width: 183px;
+}
+
+.choice-table label {
+    white-space: nowrap;
+    cursor: pointer;
+    line-height: 19px;
+}
+
+.used-row > td {
+    padding-top: 1px !important;
+    padding-bottom: 0 !important;
+}
+
+.system-row > td {
+    padding-top: 3px !important;
+}
+
+.system-table {
+    margin-top: 0;
+}
+
+/* ---------------- COMMENTS ---------------- */
+
+.comments-row > td {
+    height: 97px !important;
+}
+
+.comments {
+    display: block;
+    width: 313px;
+    height: 94px;
+    resize: none;
+    padding: 3px;
+}
+
+/* ---------------- BUTTONS ---------------- */
+
+.button-cell {
+    height: 25px !important;
+    padding-top: 4px !important;
+    text-align: center;
+}
+
+button {
+    min-width: 98px;
+    height: 21px;
+    margin: 0 1px;
+    padding: 0 7px;
+
+    background: #eeeeee;
+    color: #111111;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 17px;
+
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #777777;
+    border-bottom: 2px solid #777777;
+    border-radius: 2px;
+
+    cursor: pointer;
+}
+
+button:active {
+    border-top-color: #777777;
+    border-left-color: #777777;
+    border-right-color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+/* Giữ bố cục giống ảnh trên màn hình nhỏ */
+@media (max-width: 600px) {
+    body {
+        min-width: 595px;
+    }
+}
