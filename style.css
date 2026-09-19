@@ -1,0 +1,325 @@
+/* =========================================================
+   JACKSON ELECTRONICS
+   Table-based page layout.
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff;
+    color: #111111;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 14px;
+}
+
+/* Khung xanh chính - gần đúng màu ảnh mẫu: rgb(152, 205, 255) */
+.page {
+    width: 580px;
+    min-height: 617px;
+    margin: 4px auto;
+    padding: 2px 0 3px;
+    background: rgb(152, 205, 255);
+    border: 1px solid #dddddd;
+}
+
+/* ---------------- LOGO ---------------- */
+
+.logo {
+    width: 266px;
+    height: 68px;
+    margin: 0 auto;
+    table-layout: fixed;
+
+    background: linear-gradient(
+        to bottom,
+        #22f4eb 0%,
+        #09e4df 55%,
+        #25d7e6 100%
+    );
+
+    border: 1px solid #222222;
+    border-radius: 11px;
+    box-shadow: 5px 7px 2px rgba(70, 90, 100, 0.42);
+    overflow: hidden;
+}
+
+.logo td {
+    height: 33px;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 27px;
+    line-height: 31px;
+    font-weight: bold;
+}
+
+.logo tr:first-child td {
+    border-bottom: 3px solid #111111;
+}
+
+/* ---------------- TITLE ---------------- */
+
+h1 {
+    margin: 30px 0 15px;
+    padding: 0;
+    text-align: center;
+    font-size: 25px;
+    line-height: 28px;
+    font-weight: bold;
+}
+
+.intro {
+    margin: 0 0 3px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+/* ---------------- MAIN FORM TABLE ---------------- */
+
+.form-table {
+    width: 480px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+.form-table > tbody > tr > td {
+    height: 22px;
+    padding: 1px 0;
+    vertical-align: middle;
+}
+
+.label-col {
+    width: 167px;
+    padding-left: 0 !important;
+    font-weight: normal;
+}
+
+.top-label {
+    vertical-align: top !important;
+    padding-top: 3px !important;
+}
+
+.inline-table,
+.choice-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.inline-table td,
+.choice-table td {
+    padding: 0;
+    vertical-align: middle;
+}
+
+.small-label {
+    white-space: nowrap;
+    padding-left: 4px !important;
+}
+
+/* ---------------- INPUTS ---------------- */
+
+input[type="text"],
+select,
+textarea {
+    margin: 0;
+    padding: 1px 3px;
+    background: #ffffff;
+    color: #111111;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+
+    border-top: 2px solid #a5a5a5;
+    border-left: 2px solid #a5a5a5;
+    border-right: 2px solid #eeeeee;
+    border-bottom: 2px solid #eeeeee;
+
+    border-radius: 0;
+    outline: none;
+}
+
+input[type="text"] {
+    height: 21px;
+}
+
+/* Name */
+.first-name {
+    width: 103px;
+}
+
+.last-name {
+    width: 103px;
+}
+
+/* Address */
+.address-input {
+    width: 185px;
+}
+
+/* City / State / Zip */
+.city-input {
+    width: 130px;
+}
+
+.state-label {
+    padding-left: 2px !important;
+}
+
+.state-input {
+    width: 38px;
+}
+
+.zip-label {
+    padding-left: 5px !important;
+}
+
+.zip-input {
+    width: 62px;
+}
+
+/* Country */
+.country-input {
+    width: 130px;
+}
+
+/* Product / date / serial */
+.product-select {
+    width: 108px;
+    height: 21px;
+    padding: 0 2px;
+}
+
+.medium-input {
+    width: 130px;
+}
+
+/* ---------------- SEPARATORS ---------------- */
+
+hr {
+    height: 1px;
+    margin: 8px 0 8px;
+    padding: 0;
+    border: 0;
+    border-top: 1px solid #5d879f;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.bottom-line {
+    margin-top: 8px;
+    margin-bottom: 9px;
+}
+
+/* ---------------- RADIO / CHECKBOX ---------------- */
+
+/*
+   Ảnh mẫu dùng control kiểu cũ với nền xanh rất nhạt.
+   accent-color giữ được trạng thái chọn và cho màu gần giao diện mẫu.
+*/
+input[type="radio"],
+input[type="checkbox"] {
+    width: 13px;
+    height: 13px;
+    margin: 0 3px 0 0;
+    padding: 0;
+    vertical-align: -2px;
+    accent-color: #87c8f0;
+}
+
+.choice-table {
+    width: 305px;
+    table-layout: fixed;
+}
+
+.choice-table td:first-child {
+    width: 122px;
+}
+
+.choice-table td:last-child {
+    width: 183px;
+}
+
+.choice-table label {
+    white-space: nowrap;
+    cursor: pointer;
+    line-height: 19px;
+}
+
+.used-row > td {
+    padding-top: 1px !important;
+    padding-bottom: 0 !important;
+}
+
+.system-row > td {
+    padding-top: 3px !important;
+}
+
+.system-table {
+    margin-top: 0;
+}
+
+/* ---------------- COMMENTS ---------------- */
+
+.comments-row > td {
+    height: 97px !important;
+}
+
+.comments {
+    display: block;
+    width: 313px;
+    height: 94px;
+    resize: none;
+    padding: 3px;
+}
+
+/* ---------------- BUTTONS ---------------- */
+
+.button-cell {
+    height: 25px !important;
+    padding-top: 4px !important;
+    text-align: center;
+}
+
+button {
+    min-width: 98px;
+    height: 21px;
+    margin: 0 1px;
+    padding: 0 7px;
+
+    background: #eeeeee;
+    color: #111111;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 17px;
+
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #777777;
+    border-bottom: 2px solid #777777;
+    border-radius: 2px;
+
+    cursor: pointer;
+}
+
+button:active {
+    border-top-color: #777777;
+    border-left-color: #777777;
+    border-right-color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+/* Giữ bố cục giống ảnh trên màn hình nhỏ */
+@media (max-width: 600px) {
+    body {
+        min-width: 595px;
+    }
+}
